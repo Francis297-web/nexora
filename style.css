@@ -139,6 +139,12 @@ text-decoration:none;
 background:linear-gradient(135deg,#00f7ff,#6f00ff);
 color:white;
 font-weight:600;
+transition:.3s;
+}
+
+.btn-primary:hover{
+transform:translateY(-2px);
+box-shadow:0 10px 25px rgba(0,247,255,.3);
 }
 
 .btn-secondary{
@@ -147,6 +153,12 @@ border-radius:30px;
 border:1px solid #00f7ff;
 text-decoration:none;
 color:white;
+transition:.3s;
+}
+
+.btn-secondary:hover{
+background:rgba(0,247,255,.1);
+transform:translateY(-2px);
 }
 
 .hero-right{
@@ -284,9 +296,18 @@ select,
 textarea{
 padding:18px;
 background:#111827;
-border:none;
+border:1px solid #1f2937;
 border-radius:12px;
 color:white;
+transition:.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+outline:none;
+border-color:#00f7ff;
+box-shadow:0 0 10px rgba(0,247,255,.2);
 }
 
 textarea{
@@ -302,6 +323,16 @@ cursor:pointer;
 font-weight:600;
 background:linear-gradient(135deg,#00f7ff,#6f00ff);
 color:white;
+transition:.3s;
+}
+
+button:hover{
+transform:translateY(-2px);
+box-shadow:0 10px 25px rgba(0,247,255,.3);
+}
+
+button:active{
+transform:translateY(0);
 }
 
 footer{
@@ -326,6 +357,30 @@ color:white;
 text-decoration:none;
 box-shadow:0 0 30px rgba(37,211,102,.5);
 z-index:999;
+transition:.3s;
+}
+
+.whatsapp:hover{
+transform:scale(1.15);
+}
+
+.portfolio-showcase{
+width:100%;
+margin-bottom:60px;
+text-align:center;
+}
+
+.portfolio-showcase img{
+max-width:100%;
+height:auto;
+border-radius:20px;
+}
+
+.projects-subtitle{
+text-align:center;
+color:#c9d4e5;
+margin-bottom:40px;
+font-size:16px;
 }
 
 @media(max-width:900px){
@@ -350,6 +405,7 @@ width:100%;
 nav{
 display:none;
 }
+
 .hidden{
 opacity:0;
 transform:translateY(40px);
@@ -359,4 +415,54 @@ transition:all .8s ease;
 .show{
 opacity:1;
 transform:translateY(0);
+}
+
+.hero-buttons{
+flex-direction:column;
+align-items:center;
+}
+
+.btn-primary,
+.btn-secondary{
+width:100%;
+text-align:center;
+}
+
+}
+
+@media(max-width:600px){
+
+header{
+padding:15px 5%;
+flex-wrap:wrap;
+}
+
+.hero{
+padding:50px 5%;
+}
+
+.hero h1{
+font-size:32px;
+}
+
+.services,
+.projects,
+.developers,
+.contact{
+padding:60px 5%;
+}
+
+.stat-card{
+padding:15px;
+}
+
+.stat-card h2{
+font-size:24px;
+}
+
+.section-title{
+font-size:32px;
+margin-bottom:40px;
+}
+
 }
