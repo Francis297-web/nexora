@@ -42,15 +42,9 @@ Cloud infrastructure and hosting solutions for modern businesses.
 
 ## 🚀 Live Demo
 
-Add your GitHub Pages or Vercel deployment link here.
-
-Example:
-
-https://your-username.github.io/nexora-hub/
+https://Francis297-web.github.io/nexora-hub/
 
 ## 📸 Screenshots
-
-Add screenshots of the homepage and projects here.
 
 ```markdown
 ![Homepage](images/homepage.png)
