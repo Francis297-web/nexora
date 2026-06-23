@@ -29,8 +29,8 @@ An AI-powered anti-fraud and cybersecurity platform designed to protect users fr
 ### 💳 Ciscolyn
 A revolutionary fintech concept enabling transactions through secure device identification technology.
 
-### 🌐 Nexora Cloud
-Cloud infrastructure and hosting solutions for modern businesses.
+### 🌐 Alvindo's beauty parlour
+A client website for a modern beauty business.
 
 ## 📱 Contact
 
@@ -47,8 +47,8 @@ https://Francis297-web.github.io/nexora-hub/
 ## 📸 Screenshots
 
 ```markdown
-![Homepage](images/homepage.png)
-
 ![LynShield](images/lynshield.png)
 
 ![Ciscolyn](images/ciscolyn.png)
+
+![Alvindo's beauty parlour](images/Alvindo's beauty parlour.png)
