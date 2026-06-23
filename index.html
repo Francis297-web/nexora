@@ -170,62 +170,59 @@ Popular Categories
 </div>
 
 </section>
+
 <section id="projects" class="projects">
 
-    <h2 class="section-title">
-        Featured Projects
-    </h2>
+<h2 class="section-title">
+Featured Projects
+</h2>
 
-    <p class="projects-subtitle">
-        Real solutions designed to solve modern technology challenges.
-    </p>
+<p class="projects-subtitle">
+Real solutions designed to solve modern technology challenges.
+</p>
 
-    <div class="portfolio-showcase">
+<div class="portfolio-showcase">
+<img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=400&fit=crop" alt="Portfolio showcase of web development projects" onerror="this.style.display='none'">
+</div>
 
-        <img
-            src="assets/projects-showcase.png"
-            alt="Nexora Portfolio Projects">
+<div class="project-grid">
 
-    </div>
+<div class="project-card">
+<img src="https://images.unsplash.com/photo-1563986768609-322d6b0c3050?w=400&h=300&fit=crop" alt="LynShield anti-fraud platform">
+<div class="project-info">
+<h3>🛡️ LynShield</h3>
+<p>
+AI-powered anti-fraud platform designed to monitor,
+detect and prevent suspicious financial activities
+in real time.
+</p>
+</div>
+</div>
 
-    <div class="project-grid">
+<div class="project-card">
+<img src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=400&h=300&fit=crop" alt="Ciscolyn offline transaction system">
+<div class="project-info">
+<h3>📲 Ciscolyn</h3>
+<p>
+Offline transaction ecosystem enabling secure
+transfers even in low-connectivity environments.
+</p>
+</div>
+</div>
 
-        <div class="project-card">
+<div class="project-card">
+<img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop" alt="Nexora Hub developer network">
+<div class="project-info">
+<h3>🌐 Nexora Hub</h3>
+<p>
+Collaborative developer network connecting
+businesses with technology professionals and
+project opportunities.
+</p>
+</div>
+</div>
 
-            <h3>🛡️ LynShield</h3>
-
-            <p>
-                AI-powered anti-fraud platform designed to monitor,
-                detect and prevent suspicious financial activities
-                in real time.
-            </p>
-
-        </div>
-
-        <div class="project-card">
-
-            <h3>📲 Ciscolyn</h3>
-
-            <p>
-                Offline transaction ecosystem enabling secure
-                transfers even in low-connectivity environments.
-            </p>
-
-        </div>
-
-        <div class="project-card">
-
-            <h3>🌐 Nexora Hub</h3>
-
-            <p>
-                Collaborative developer network connecting
-                businesses with technology professionals and
-                project opportunities.
-            </p>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
@@ -236,13 +233,13 @@ Popular Categories
 Join Our Network
 </h2>
 
-<form class="developer-form">
+<form class="developer-form" name="developerForm">
 
-<input type="text" placeholder="Full Name">
+<input type="text" placeholder="Full Name" required>
 
-<input type="email" placeholder="Email Address">
+<input type="email" placeholder="Email Address" required>
 
-<select>
+<select required>
 <option>Select Specialty</option>
 <option>Frontend Developer</option>
 <option>Backend Developer</option>
@@ -251,7 +248,7 @@ Join Our Network
 <option>UI/UX Designer</option>
 </select>
 
-<textarea placeholder="Tell us about yourself"></textarea>
+<textarea placeholder="Tell us about yourself" required></textarea>
 
 <button type="submit">
 Apply Now
@@ -267,15 +264,15 @@ Apply Now
 Start Your Project
 </h2>
 
-<form class="contact-form">
+<form class="contact-form" name="contactForm">
 
-<input type="text" placeholder="Full Name">
+<input type="text" placeholder="Full Name" required>
 
-<input type="email" placeholder="Email Address">
+<input type="email" placeholder="Email Address" required>
 
-<input type="text" placeholder="Project Type">
+<input type="text" placeholder="Project Type" required>
 
-<textarea placeholder="Describe your project"></textarea>
+<textarea placeholder="Describe your project" required></textarea>
 
 <button type="submit">
 Send Request
@@ -301,7 +298,9 @@ Kamakis, Ruiru
 
 <a href="https://wa.me/254790357975"
 class="whatsapp"
-target="_blank">
+target="_blank"
+rel="noopener noreferrer"
+title="Contact us on WhatsApp">
 
 <i class="fab fa-whatsapp"></i>
 
