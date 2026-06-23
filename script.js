@@ -45,18 +45,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    // Forms
+    // Forms with Validation
     document.querySelectorAll("form").forEach(form => {
 
         form.addEventListener("submit", e => {
 
             e.preventDefault();
 
+            // Get form inputs
+            const inputs = form.querySelectorAll("input, textarea, select");
+            let isValid = true;
+
+            // Basic validation
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    isValid = false;
+                    input.style.borderColor = "#ff6b6b";
+                } else {
+                    input.style.borderColor = "#1f2937";
+                    
+                    // Email validation
+                    if (input.type === "email") {
+                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                        if (!emailRegex.test(input.value)) {
+                            isValid = false;
+                            input.style.borderColor = "#ff6b6b";
+                        }
+                    }
+                }
+            });
+
+            if (!isValid) {
+                alert("Please fill in all fields correctly.");
+                return;
+            }
+
             alert(
                 "Thank you for contacting Nexora Technologies. Our team will reach out shortly."
             );
 
             form.reset();
+            inputs.forEach(input => {
+                input.style.borderColor = "#1f2937";
+            });
 
         });
 
