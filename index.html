@@ -64,22 +64,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     </div>
 
     <div class="stats">
-      <div>
-        <h3>500+</h3>
-        <p>Projects</p>
-      </div>
-      <div>
-        <h3>200+</h3>
-        <p>Developers</p>
-      </div>
-      <div>
-        <h3>98%</h3>
-        <p>Success</p>
-      </div>
-      <div>
-        <h3>24/7</h3>
-        <p>Support</p>
-      </div>
+      <div><h3>500+</h3><p>Projects</p></div>
+      <div><h3>200+</h3><p>Developers</p></div>
+      <div><h3>98%</h3><p>Success</p></div>
+      <div><h3>24/7</h3><p>Support</p></div>
     </div>
 
   </div>
@@ -138,11 +126,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
   <h2>Join Our Developers Network</h2>
 
-  <form>
-    <input type="text" placeholder="Full Name" required>
-    <input type="email" placeholder="Email Address" required>
+  <form id="developerForm">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
 
-    <select required>
+    <select name="specialty" required>
       <option value="">Select Specialty</option>
       <option>Frontend Developer</option>
       <option>Backend Developer</option>
@@ -151,9 +139,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
       <option>Cybersecurity Expert</option>
     </select>
 
-    <textarea placeholder="Tell us about your skills"></textarea>
+    <textarea name="skills" placeholder="Tell us about your skills"></textarea>
 
     <button type="submit">Apply Now</button>
+
+    <p class="form-msg" id="devMsg"></p>
   </form>
 
 </section>
@@ -163,12 +153,15 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
   <h2>Start Your Project</h2>
 
-  <form>
-    <input type="text" placeholder="Full Name">
-    <input type="email" placeholder="Email">
-    <input type="text" placeholder="Project Type">
-    <textarea placeholder="Describe your idea"></textarea>
+  <form id="contactForm">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="text" name="project" placeholder="Project Type" required>
+    <textarea name="idea" placeholder="Describe your idea" required></textarea>
+
     <button type="submit">Send Request</button>
+
+    <p class="form-msg" id="contactMsg"></p>
   </form>
 
 </section>
@@ -185,7 +178,37 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   <i class="fab fa-whatsapp"></i>
 </a>
 
-<script src="script.js"></script>
+<!-- SCRIPT -->
+<script>
+const devForm = document.getElementById("developerForm");
+const devMsg = document.getElementById("devMsg");
+
+devForm.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = devForm.name.value;
+
+  devMsg.textContent = `Welcome ${name}! Your application has been received.`;
+  devMsg.style.color = "lightgreen";
+
+  devForm.reset();
+});
+
+
+const contactForm = document.getElementById("contactForm");
+const contactMsg = document.getElementById("contactMsg");
+
+contactForm.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = contactForm.name.value;
+
+  contactMsg.textContent = `Thanks ${name}! We will review your project soon.`;
+  contactMsg.style.color = "lightblue";
+
+  contactForm.reset();
+});
+</script>
 
 </body>
 </html>
