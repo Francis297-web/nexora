@@ -1,6 +1,6 @@
 /* =========================
    NEXORA ELITE UI SYSTEM
-   ========================= */
+========================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
@@ -41,7 +41,7 @@ z-index:-2;
 }
 
 /* =========================
-   HEADER (GLASS PREMIUM)
+   HEADER (FIXED - MATCHES YOUR HTML)
 ========================= */
 
 .site-header{
@@ -52,6 +52,7 @@ padding:18px 8%;
 position:fixed;
 width:100%;
 top:0;
+left:0;
 z-index:1000;
 
 background:rgba(10,15,25,0.55);
@@ -59,7 +60,6 @@ backdrop-filter: blur(18px);
 border-bottom:1px solid rgba(255,255,255,0.06);
 }
 
-/* LOGO AREA (matches your HTML) */
 .logo-container{
 display:flex;
 align-items:center;
@@ -67,11 +67,11 @@ gap:12px;
 }
 
 .logo-img{
-width:42px;
-height:42px;
+width:44px;
+height:44px;
 object-fit:contain;
 border-radius:10px;
-box-shadow:0 0 20px rgba(0,255,255,0.2);
+filter: drop-shadow(0 0 10px rgba(0,255,255,0.3));
 }
 
 .brand h2{
@@ -83,12 +83,11 @@ letter-spacing:2px;
 .brand span{
 font-size:11px;
 color:#00f0ff;
-letter-spacing:1px;
 display:block;
 margin-top:-2px;
+letter-spacing:1px;
 }
 
-/* NAV */
 nav{
 display:flex;
 gap:28px;
@@ -121,7 +120,6 @@ nav a:hover::after{
 width:100%;
 }
 
-/* BUTTON */
 .nav-btn{
 padding:10px 18px;
 border-radius:10px;
@@ -129,7 +127,6 @@ background:linear-gradient(135deg,#00f0ff,#7c4dff);
 color:white;
 text-decoration:none;
 font-weight:600;
-box-shadow:0 0 25px rgba(0,255,255,0.15);
 transition:0.3s;
 }
 
@@ -138,7 +135,7 @@ transform:translateY(-2px);
 }
 
 /* =========================
-   HERO SECTION (ELITE)
+   HERO SECTION
 ========================= */
 
 .hero{
@@ -273,7 +270,7 @@ margin-bottom:50px;
 }
 
 /* =========================
-   SERVICE / CARD GRID
+   GRID
 ========================= */
 
 .grid{
