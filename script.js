@@ -1,169 +1,213 @@
-// NEXORA TECHNOLOGIES
+// NEXORA TECHNOLOGIES - FULL UPGRADED SYSTEM
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    // Smooth Scroll
+    // =========================
+    // FIREBASE CONFIG (ADD YOUR KEYS)
+    // =========================
+    const firebaseConfig = {
+        apiKey: "YOUR_API_KEY",
+        authDomain: "YOUR_AUTH_DOMAIN",
+        projectId: "YOUR_PROJECT_ID",
+        storageBucket: "YOUR_STORAGE_BUCKET",
+        messagingSenderId: "YOUR_SENDER_ID",
+        appId: "YOUR_APP_ID"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // =========================
+    // SMOOTH SCROLL
+    // =========================
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
             e.preventDefault();
 
-            const target = document.querySelector(
-                this.getAttribute("href")
-            );
+            const target = document.querySelector(this.getAttribute("href"));
 
             if (target) {
-                target.scrollIntoView({
-                    behavior: "smooth"
-                });
+                target.scrollIntoView({ behavior: "smooth" });
             }
         });
     });
 
-    // Scroll Animation
+    // =========================
+    // SCROLL ANIMATION
+    // =========================
     const observer = new IntersectionObserver(entries => {
-
         entries.forEach(entry => {
-
             if (entry.isIntersecting) {
-
                 entry.target.classList.add("show");
-
             }
-
         });
+    }, { threshold: 0.15 });
 
-    }, {
-        threshold: 0.15
-    });
-
-    document.querySelectorAll(
-        ".service-card,.project-card,.stat-card,.developer-form,.contact-form"
-    ).forEach(el => {
-
+    document.querySelectorAll(".card, .project-card, .stats div, form").forEach(el => {
         el.classList.add("hidden");
         observer.observe(el);
-
     });
 
-    // Forms with Validation
-    document.querySelectorAll("form").forEach(form => {
+    // =========================
+    // ELEMENTS
+    // =========================
+    const devForm = document.getElementById("developerForm");
+    const contactForm = document.getElementById("contactForm");
 
-        form.addEventListener("submit", e => {
+    const devMsg = document.getElementById("devMsg");
+    const contactMsg = document.getElementById("contactMsg");
 
-            e.preventDefault();
+    // =========================
+    // VALIDATION FUNCTION
+    // =========================
+    function validateForm(inputs) {
+        let valid = true;
 
-            // Get form inputs
-            const inputs = form.querySelectorAll("input, textarea, select");
-            let isValid = true;
+        inputs.forEach(input => {
+            if (!input.value.trim()) {
+                valid = false;
+                input.style.borderColor = "red";
+            } else {
+                input.style.borderColor = "#1f2937";
 
-            // Basic validation
-            inputs.forEach(input => {
-                if (!input.value.trim()) {
-                    isValid = false;
-                    input.style.borderColor = "#ff6b6b";
-                } else {
-                    input.style.borderColor = "#1f2937";
-                    
-                    // Email validation
-                    if (input.type === "email") {
-                        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                        if (!emailRegex.test(input.value)) {
-                            isValid = false;
-                            input.style.borderColor = "#ff6b6b";
-                        }
+                if (input.type === "email") {
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(input.value)) {
+                        valid = false;
+                        input.style.borderColor = "red";
                     }
                 }
-            });
+            }
+        });
 
-            if (!isValid) {
-                alert("Please fill in all fields correctly.");
+        return valid;
+    }
+
+    // =========================
+    // DEVELOPER FORM (FIRESTORE)
+    // =========================
+    if (devForm) {
+        devForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const inputs = devForm.querySelectorAll("input, textarea, select");
+
+            if (!validateForm(inputs)) {
+                devMsg.textContent = "Please fill all fields correctly.";
+                devMsg.style.color = "red";
                 return;
             }
 
-            alert(
-                "Thank you for contacting Nexora Technologies. Our team will reach out shortly."
-            );
+            devMsg.textContent = "Submitting...";
+            devMsg.style.color = "white";
 
-            form.reset();
-            inputs.forEach(input => {
-                input.style.borderColor = "#1f2937";
-            });
+            try {
+                await addDoc(collection(db, "developers"), {
+                    name: devForm.name.value,
+                    email: devForm.email.value,
+                    specialty: devForm.specialty.value,
+                    skills: devForm.skills.value,
+                    timestamp: Date.now()
+                });
 
+                devMsg.textContent = "Application submitted successfully!";
+                devMsg.style.color = "lightgreen";
+
+                devForm.reset();
+
+            } catch (error) {
+                devMsg.textContent = "Error submitting application.";
+                devMsg.style.color = "red";
+            }
         });
+    }
 
-    });
+    // =========================
+    // CONTACT FORM (FIRESTORE)
+    // =========================
+    if (contactForm) {
+        contactForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
 
-    // Counter Animation
-    const counters = document.querySelectorAll(".stat-card h2");
+            const inputs = contactForm.querySelectorAll("input, textarea");
+
+            if (!validateForm(inputs)) {
+                contactMsg.textContent = "Please fill all fields correctly.";
+                contactMsg.style.color = "red";
+                return;
+            }
+
+            contactMsg.textContent = "Sending...";
+            contactMsg.style.color = "white";
+
+            try {
+                await addDoc(collection(db, "projects"), {
+                    name: contactForm.name.value,
+                    email: contactForm.email.value,
+                    project: contactForm.project.value,
+                    idea: contactForm.idea.value,
+                    timestamp: Date.now()
+                });
+
+                contactMsg.textContent = "Project request sent successfully!";
+                contactMsg.style.color = "lightblue";
+
+                contactForm.reset();
+
+            } catch (error) {
+                contactMsg.textContent = "Error sending request.";
+                contactMsg.style.color = "red";
+            }
+        });
+    }
+
+    // =========================
+    // COUNTER ANIMATION
+    // =========================
+    const counters = document.querySelectorAll(".stats h3");
 
     counters.forEach(counter => {
+        const target = parseInt(counter.innerText.replace(/\D/g, ""));
+        let count = 0;
+        const speed = target / 100;
 
-        const updateCounter = () => {
+        const interval = setInterval(() => {
+            count += speed;
 
-            const target = parseInt(
-                counter.innerText.replace(/\D/g, "")
-            );
+            if (count >= target) {
+                counter.innerText =
+                    counter.innerText.includes("%")
+                        ? target + "%"
+                        : counter.innerText.includes("/")
+                        ? "24/7"
+                        : target + "+";
 
-            let count = 0;
-
-            const speed = target / 100;
-
-            const interval = setInterval(() => {
-
-                count += speed;
-
-                if (count >= target) {
-
-                    counter.innerText =
-                        counter.innerText.includes("%")
-                            ? target + "%"
-                            : counter.innerText.includes("/")
-                            ? "24/7"
-                            : target + "+";
-
-                    clearInterval(interval);
-
-                } else {
-
-                    if (counter.innerText.includes("%")) {
-
-                        counter.innerText =
-                            Math.floor(count) + "%";
-
-                    } else {
-
-                        counter.innerText =
-                            Math.floor(count) + "+";
-
-                    }
-
-                }
-
-            }, 20);
-
-        };
-
-        updateCounter();
-
+                clearInterval(interval);
+            } else {
+                counter.innerText =
+                    counter.innerText.includes("%")
+                        ? Math.floor(count) + "%"
+                        : Math.floor(count) + "+";
+            }
+        }, 20);
     });
 
 });
 
-// Floating WhatsApp Glow Effect
+// =========================
+// WHATSAPP FLOAT EFFECT
+// =========================
 const whatsapp = document.querySelector(".whatsapp");
 
 if (whatsapp) {
-
     setInterval(() => {
-
         whatsapp.style.transform = "scale(1.1)";
 
         setTimeout(() => {
-
             whatsapp.style.transform = "scale(1)";
-
         }, 500);
-
     }, 2000);
-
 }
