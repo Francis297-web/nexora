@@ -21,20 +21,28 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 <header class="site-header">
 
   <div class="logo-container">
-    <img src="images/nexora-logo.png" alt="Nexora Logo" class="logo-img">
-
+    <img src="images/nexora-logo.png" class="logo-img">
     <div class="brand">
       <h2>NEXORA</h2>
       <span>TECHNOLOGIES</span>
     </div>
   </div>
 
-  <nav>
+  <!-- HAMBURGER -->
+  <div class="hamburger" id="hamburger">
+    <i class="fas fa-bars"></i>
+  </div>
+
+  <nav id="navMenu">
     <a href="#home">Home</a>
     <a href="#services">Services</a>
     <a href="#projects">Projects</a>
     <a href="#developers">Join</a>
     <a href="#contact">Contact</a>
+
+    <!-- NEW AUTH LINKS -->
+    <a href="login.html" class="auth-link">Login</a>
+    <a href="register.html" class="auth-btn">Register</a>
   </nav>
 
   <a href="#contact" class="nav-btn">Start Project</a>
@@ -60,7 +68,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
     <div class="hero-actions">
       <a href="#contact" class="btn-primary">Hire Developers</a>
-      <a href="#developers" class="btn-secondary">Join Network</a>
+      <a href="register.html" class="btn-secondary">Join Network</a>
     </div>
 
     <div class="stats">
@@ -76,20 +84,16 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 <!-- SERVICES -->
 <section id="services" class="section">
-
   <h2>Our Services</h2>
 
   <div class="grid">
-
     <div class="card service-card"><i class="fas fa-code"></i><h3>Web Development</h3><p>Modern responsive websites.</p></div>
     <div class="card service-card"><i class="fas fa-mobile"></i><h3>Mobile Apps</h3><p>Android & iOS apps.</p></div>
     <div class="card service-card"><i class="fas fa-brain"></i><h3>AI Solutions</h3><p>Smart automation systems.</p></div>
     <div class="card service-card"><i class="fas fa-cloud"></i><h3>Cloud Services</h3><p>Scalable infrastructure.</p></div>
     <div class="card service-card"><i class="fas fa-shield-alt"></i><h3>Cybersecurity</h3><p>Secure digital systems.</p></div>
     <div class="card service-card"><i class="fas fa-paint-brush"></i><h3>UI/UX Design</h3><p>Clean modern interfaces.</p></div>
-
   </div>
-
 </section>
 
 <!-- PROJECTS -->
@@ -100,19 +104,19 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   <div class="projects">
 
     <div class="project-card">
-      <img src="images/lynshield.png" alt="LynShield Project">
+      <img src="images/lynshield.png">
       <h3>🛡️ LynShield</h3>
       <p>AI fraud detection system for financial security.</p>
     </div>
 
     <div class="project-card">
-      <img src="images/ciscolyn.png" alt="Ciscolyn Project">
+      <img src="images/ciscolyn.png">
       <h3>📲 Ciscolyn</h3>
       <p>Offline transaction system for low connectivity areas.</p>
     </div>
 
     <div class="project-card">
-      <img src="images/nexora-hub.png" alt="Nexora Hub Project">
+      <img src="images/nexora-hub.png">
       <h3>🌐 Nexora Hub</h3>
       <p>Developer marketplace and collaboration network.</p>
     </div>
@@ -124,10 +128,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 <!-- DEVELOPERS -->
 <section id="developers" class="section">
 
-  <h2>Join Our Developers Network</h2>
+  <h2>Join Developers Network</h2>
 
   <form id="developerForm" class="developer-form">
-
     <input type="text" name="name" placeholder="Full Name" required>
     <input type="email" name="email" placeholder="Email Address" required>
 
@@ -143,9 +146,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     <textarea name="skills" placeholder="Tell us about your skills" required></textarea>
 
     <button type="submit">Apply Now</button>
-
-    <p class="form-msg" id="devMsg"></p>
-
   </form>
 
 </section>
@@ -156,16 +156,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   <h2>Start Your Project</h2>
 
   <form id="contactForm" class="contact-form">
-
     <input type="text" name="name" placeholder="Full Name" required>
     <input type="email" name="email" placeholder="Email" required>
     <input type="text" name="project" placeholder="Project Type" required>
     <textarea name="idea" placeholder="Describe your idea" required></textarea>
 
     <button type="submit">Send Request</button>
-
-    <p class="form-msg" id="contactMsg"></p>
-
   </form>
 
 </section>
@@ -182,8 +178,19 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
   <i class="fab fa-whatsapp"></i>
 </a>
 
-<!-- EXTERNAL SCRIPT -->
+<!-- SCRIPT -->
 <script type="module" src="script.js"></script>
+
+<!-- HAMBURGER SCRIPT -->
+<script>
+const hamburger = document.getElementById("hamburger");
+const nav = document.getElementById("navMenu");
+
+hamburger.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
+</script>
 
 </body>
 </html>
+
