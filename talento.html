@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexora Talent Marketplace</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter', system-ui, sans-serif}
+  body{background:#0a0a0f;color:#fff}
+  .dev-card{transition: all 0.2s ease;}
+  .dev-card:hover{border-color:#00f5ff !important; transform:translateY(-4px);}
+  .filter-btn.active{background:linear-gradient(90deg,#00f5ff,#7b61ff) !important; color:#000 !important; border-color:transparent !important}
+  @media(max-width:768px){
+    .case-grid{grid-template-columns:1fr !important;}
+    .case-grid img{height:220px !important;}
+  }
+</style>
+</head>
+<body>
+
+<!-- TALENT MARKETPLACE SECTION -->
+<section id="talent" style="padding: 60px 20px; background: #0a0a0f;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 40px;">
+      <h2 style="font-size: 2.2rem; color: #fff; margin-bottom: 10px;">Meet Nexora Devs</h2>
+      <p style="color: #aaa;">Verified talent. Hire in 24hrs. 20% platform fee applies.</p>
+      <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top: 15px;">
+        <a href="#post-job" style="display: inline-block; padding: 12px 24px; background: linear-gradient(90deg, #00f5ff, #7b61ff); color: #000; border-radius: 10px; text-decoration: none; font-weight: 600;">Post a Job</a>
+        <a href="#join-dev" style="display: inline-block; padding: 12px 24px; background: #111; color: #00f5ff; border:1px solid #333; border-radius: 10px; text-decoration: none; font-weight: 600;">Join as Dev</a>
+      </div>
+    </div>
+
+    <!-- FILTERS BAR -->
+    <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-bottom: 30px;">
+      <button class="filter-btn active" data-filter="all" style="padding: 8px 14px; background: #222; color: #fff; border: 1px solid #333; border-radius: 20px; cursor: pointer; font-size: 0.85rem;">All</button>
+      <button class="filter-btn" data-filter="web" style="padding: 8px 14px; background: #222; color: #aaa; border: 1px solid #333; border-radius: 20px; cursor: pointer; font-size: 0.85rem;">Web Dev</button>
+      <button class="filter-btn" data-filter="mobile" style="padding: 8px 14px; background: #222; color: #aaa; border: 1px solid #333; border-radius: 20px; cursor: pointer; font-size: 0.85rem;">Mobile</button>
+      <button class="filter-btn" data-filter="ai" style="padding: 8px 14px; background: #222; color: #aaa; border: 1px solid #333; border-radius: 20px; cursor: pointer; font-size: 0.85rem;">AI/ML</button>
+      <button class="filter-btn" data-filter="cyber" style="padding: 8px 14px; background: #222; color: #aaa; border: 1px solid #333; border-radius: 20px; cursor: pointer; font-size: 0.85rem;">Cyber</button>
+    </div>
+
+    <!-- DEV CARDS GRID -->
+    <div id="devGrid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+      
+      <!-- Dev Card 1 -->
+      <div class="dev-card" data-category="web" style="background: #111; border: 1px solid #222; border-radius: 16px; padding: 20px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+          <img src="https://i.pravatar.cc/60?u=alice" style="border-radius: 50%; width: 60px; height: 60px; border: 2px solid #00f5ff;">
+          <div>
+            <h3 style="color: #fff; margin: 0; font-size: 1rem;">Alice Johnson 
+              <span title="Nexora Verified: Passed test + ID check" style="color: #00f5ff; font-size: 0.8rem; margin-left: 4px;">✓ Verified</span>
+              <span style="background:#ffd70022;color:#ffd700;padding:2px 6px;border-radius:4px;font-size:0.7rem;margin-left:4px;">Top Rated</span>
+            </h3>
+            <p style="color: #aaa; font-size: 0.85rem; margin: 0;">Full Stack Developer</p>
+            <p style="color: #ffd700; font-size: 0.8rem; margin: 2px 0 0 0;">★ 4.9 | 12 Jobs</p>
+          </div>
+        </div>
+        <div style="display: flex; gap: 6px; flex-wrap: wrap; margin: 10px 0;">
+          <span style="background: #1a1a24; color: #ccc; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem;">React</span>
+          <span style="background: #1a1a24; color: #ccc; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem;">Node</span>
+          <span style="background: #1a1a24; color: #ccc; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem;">MongoDB</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px;">
+          <p style="color: #fff; font-weight: bold;">From KSh 2,500/hr</p>
+          <a href="https://wa.me/254790357975?text=Hi%20Nexora%2C%20I%20want%20to%20hire%20Alice%20Johnson" 
+             style="background: linear-gradient(90deg, #00f5ff, #7b61ff); color: #000; padding: 8px 14px; border-radius: 8px; text-decoration: none; font-size: 0.9rem; font-weight: 600;">Hire</a>
+        </div>
+      </div>
+
+      <!-- Dev Card 2 -->
+      <div class="dev-card" data-category="mobile" style="background: #111; border: 1px solid #222; border-radius: 16px; padding: 20px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+          <img src="https://i.pravatar.cc/60?u=mike" style="border-radius: 50%; width: 60px; height: 60px; border: 2px solid #00f5ff;">
+          <div>
+            <h3 style="color: #fff; margin: 0; font-size: 1rem;">Mike Chen 
+              <span title="Nexora Verified" style="color: #00f5ff; font-size: 0.8rem; margin-left: 4px;">✓ Verified</span>
+            </h3>
+            <p style="color: #aaa; font-size: 0.85rem; margin: 0;">Mobile Developer</p>
+            <p style="color: #ffd700; font-size: 0.8rem; margin: 2px 0 0 0;">★ 4.8 | 8 Jobs</p>
+          </div>
+        </div>
+        <div style="display: flex; gap: 6px; flex-wrap: wrap; margin: 10px 0;">
+          <span style="background: #1a1a24; color: #ccc; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem;">Flutter</span>
+          <span style="background: #1a1a24; color: #ccc; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem;">Android</span>
+          <span style="background: #1a1a24; color: #ccc; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem;">iOS</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px;">
+          <p style="color: #fff; font-weight: bold;">From KSh 2,000/hr</p>
+          <a href="https://wa.me/254790357975?text=Hi%20Nexora%2C%20I%20want%20to%20hire%20Mike%20Chen" 
+             style="background: linear-gradient(90deg, #00f5ff, #7b61ff); color: #000; padding: 8px 14px; border-radius: 8px; text-decoration: none; font-size: 0.9rem; font-weight: 600;">Hire</a>
+        </div>
+      </div>
+
+      <!-- Dev Card 3 -->
+      <div class="dev-card" data-category="ai" style="background: #111; border: 1px solid #222; border-radius: 16px; padding: 20px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+          <img src="https://i.pravatar.cc/60?u=faith" style="border-radius: 50%; width: 60px; height: 60px; border: 2px solid #00f5ff;">
+          <div>
+            <h3 style="color: #fff; margin: 0; font-size: 1rem;">Faith Otieno 
+              <span title="Nexora Verified" style="color: #00f5ff; font-size: 0.8rem; margin-left: 4px;">✓ Verified</span>
+            </h3>
+            <p style="color: #aaa; font-size: 0.85rem; margin: 0;">AI/ML Engineer</p>
+            <p style="color: #ffd700; font-size: 0.8rem; margin: 2px 0 0 0;">★ 5.0 | 6 Jobs</p>
+          </div>
+        </div>
+        <div style="display: flex; gap: 6px; flex-wrap: wrap; margin: 10px 0;">
+          <span style="background: #1a1a24; color: #ccc; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem;">Python</span>
+          <span style="background: #1a1a24; color: #ccc; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem;">TensorFlow</span>
+          <span style="background: #1a1a24; color: #ccc; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem;">OpenCV</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px;">
+          <p style="color: #fff; font-weight: bold;">From KSh 3,000/hr</p>
+          <a href="https://wa.me/254790357975?text=Hi%20Nexora%2C%20I%20want%20to%20hire%20Faith%20Otieno" 
+             style="background: linear-gradient(90deg, #00f5ff, #7b61ff); color: #000; padding: 8px 14px; border-radius: 8px; text-decoration: none; font-size: 0.9rem; font-weight: 600;">Hire</a>
+        </div>
+      </div>
+
+      <!-- Dev Card 4 -->
+      <div class="dev-card" data-category="cyber" style="background: #111; border: 1px solid #222; border-radius: 16px; padding: 20px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+          <img src="https://i.pravatar.cc/60?u=kevin" style="border-radius: 50%; width: 60px; height: 60px; border: 2px solid #00f5ff;">
+          <div>
+            <h3 style="color: #fff; margin: 0; font-size: 1rem;">Kevin Mutua 
+              <span title="Nexora Verified" style="color: #00f5ff; font-size: 0.8rem; margin-left: 4px;">✓ Verified</span>
+            </h3>
+            <p style="color: #aaa; font-size: 0.85rem; margin: 0;">Cybersecurity Analyst</p>
+            <p style="color: #ffd700; font-size: 0.8rem; margin: 2px 0 0 0;">★ 4.7 | 15 Jobs</p>
+          </div>
+        </div>
+        <div style="display: flex; gap: 6px; flex-wrap: wrap; margin: 10px 0;">
+          <span style="background: #1a1a24; color: #ccc; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem;">PenTest</span>
+          <span style="background: #1a1a24; color: #ccc; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem;">SOC</span>
+          <span style="background: #1a1a24; color: #ccc; padding: 4px 8px; border-radius: 6px; font-size: 0.75rem;">Wazuh</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 12px;">
+          <p style="color: #fff; font-weight: bold;">From KSh 2,800/hr</p>
+          <a href="https://wa.me/254790357975?text=Hi%20Nexora%2C%20I%20want%20to%20hire%20Kevin%20Mutua" 
+             style="background: linear-gradient(90deg, #00f5ff, #7b61ff); color: #000; padding: 8px 14px; border-radius: 8px; text-decoration: none; font-size: 0.9rem; font-weight: 600;">Hire</a>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- POST A JOB FORM -->
+    <div id="post-job" style="margin-top: 60px; background: #111; border: 1px solid #222; border-radius: 16px; padding: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">
+      <h3 style="color: #fff; text-align: center; margin-bottom: 20px;">Post a Job to Nexora</h3>
+      <form id="jobForm">
+        <input id="jobTitle" placeholder="Project Title e.g. E-commerce Site" required style="width: 100%; padding: 12px; margin-bottom: 12px; background: #0a0a0f; border: 1px solid #333; color: #fff; border-radius: 8px; outline:none;">
+        <textarea id="jobDesc" placeholder="Describe what you need. Budget. Deadline." rows="4" required style="width: 100%; padding: 12px; margin-bottom: 12px; background: #0a0a0f; border: 1px solid #333; color: #fff; border-radius: 8px; outline:none; resize:vertical;"></textarea>
+        <button type="submit" style="width: 100%; padding: 14px; background: linear-gradient(90deg, #00f5ff, #7b61ff); color: #000; border: none; border-radius: 10px; font-weight: 600; cursor:pointer;">Send Job on WhatsApp</button>
+      </form>
+      <p style="color: #777; font-size: 0.8rem; text-align: center; margin-top: 10px;">We’ll match you with 3 devs in 24hrs. 20% fee applies.</p>
+    </div>
+
+    <!-- JOIN AS DEV FORM -->
+    <div id="join-dev" style="margin-top: 40px; background: #111; border: 1px solid #222; border-radius: 16px; padding: 30px; max-width: 700px; margin-left: auto; margin-right: auto;">
+      <h3 style="color: #fff; text-align: center; margin-bottom: 10px;">Join Nexora Developers Network</h3>
+      <p style="color:#aaa; text-align:center; font-size:0.9rem; margin-bottom:20px;">KSh 1,000 Verification Fee. Get the ✓ Verified badge + more client invites.</p>
+      <form id="devForm">
+        <input id="devName" placeholder="Full Name" required style="width: 100%; padding: 12px; margin-bottom: 12px; background: #0a0a0f; border: 1px solid #333; color: #fff; border-radius: 8px;">
+        <input id="devSkills" placeholder="Your Stack e.g. React, Flutter, Python" required style="width: 100%; padding: 12px; margin-bottom: 12px; background: #0a0a0f; border: 1px solid #333; color: #fff; border-radius: 8px;">
+        <input id="devRate" placeholder="Your Hourly Rate e.g. KSh 2000/hr" required style="width: 100%; padding: 12px; margin-bottom: 12px; background: #0a0a0f; border: 1px solid #333; color: #fff; border-radius: 8px;">
+        <button type="submit" style="width: 100%; padding: 14px; background: linear-gradient(90deg, #00f5ff, #7b61ff); color: #000; border: none; border-radius: 10px; font-weight: 600; cursor:pointer;">Apply on WhatsApp</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<script>
+// 1. WhatsApp Form Fix - Combine fields
+document.getElementById('jobForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const title = document.getElementById('jobTitle').value;
+  const desc = document.getElementById('jobDesc').value;
+  const message = encodeURIComponent(`*New Job Request*%0A%0A*Title:* ${title}%0A*Details:* ${desc}`);
+  window.open(`https://wa.me/254790357975?text=${message}`, '_blank');
+});
+
+document.getElementById('devForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const name = document.getElementById('devName').value;
+  const skills = document.getElementById('devSkills').value;
+  const rate = document.getElementById('devRate').value;
+  const message = encodeURIComponent(`*Dev Application*%0A%0A*Name:* ${name}%0A*Skills:* ${skills}%0A*Rate:* ${rate}%0A%0AI'm ready to pay KSh 1,000 verification fee.`);
+  window.open(`https://wa.me/254790357975?text=${message}`, '_blank');
+});
+
+// 2. Filter Logic - No license JS
+const filterBtns = document.querySelectorAll('.filter-btn');
+const devCards = document.querySelectorAll('.dev-card');
+
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => {b.classList.remove('active'); b.style.color='#aaa';});
+    btn.classList.add('active'); btn.style.color='#000';
+    
+    const filter = btn.dataset.filter;
+    devCards.forEach(card => {
+      if(filter === 'all' || card.dataset.category === filter){
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+</script>
+
+</body>
+</html>
