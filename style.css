@@ -1288,3 +1288,170 @@ font-size:18px;
 }
 
 }
+/* =======================================
+BACK TO TOP
+======================================= */
+
+.back-top{
+
+position:fixed;
+
+right:25px;
+
+bottom:100px;
+
+width:55px;
+
+height:55px;
+
+border:none;
+
+border-radius:50%;
+
+background:#FFD700;
+
+color:#111;
+
+font-size:20px;
+
+cursor:pointer;
+
+opacity:0;
+
+pointer-events:none;
+
+transition:.35s;
+
+z-index:999;
+
+}
+
+.show-top{
+
+opacity:1;
+
+pointer-events:auto;
+
+}
+
+/* =======================================
+LOADER
+======================================= */
+
+.page-loader{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:#060B16;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:999999;
+
+transition:.8s;
+
+}
+
+.loader-hide{
+
+opacity:0;
+
+visibility:hidden;
+
+}
+
+.loader-logo{
+
+text-align:center;
+
+}
+
+.loader-logo img{
+
+width:90px;
+
+margin-bottom:20px;
+
+animation:spinLogo 2s linear infinite;
+
+}
+
+@keyframes spinLogo{
+
+100%{
+
+transform:rotate(360deg);
+
+}
+
+}
+
+/* =======================================
+FORM MESSAGE
+======================================= */
+
+.form-message{
+
+margin-top:20px;
+
+font-weight:600;
+
+}
+
+/* =======================================
+PARTICLES
+======================================= */
+
+.particle{
+
+position:fixed;
+
+bottom:-20px;
+
+width:8px;
+
+height:8px;
+
+border-radius:50%;
+
+background:#FFD700;
+
+pointer-events:none;
+
+opacity:.7;
+
+animation:particleUp linear forwards;
+
+}
+
+@keyframes particleUp{
+
+0%{
+
+transform:translateY(0);
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-110vh);
+
+opacity:0;
+
+}
+
+}
