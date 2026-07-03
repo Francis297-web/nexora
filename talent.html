@@ -3,77 +3,85 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nexora Talent Hub</title>
+<title>Nexora Talent Marketplace</title>
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/talent.css">
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:#0b1220;color:#fff}
+header{padding:18px 8%;display:flex;justify-content:space-between;align-items:center;background:#111827;position:sticky;top:0}
+.logo{font-size:28px;font-weight:bold;color:#3b82f6}
+.hero{padding:80px 8%;text-align:center;background:linear-gradient(135deg,#111827,#1e3a8a)}
+.hero h1{font-size:52px;margin-bottom:10px}
+.hero p{max-width:700px;margin:auto}
+.btn{display:inline-block;margin:12px;padding:14px 28px;background:#2563eb;color:#fff;text-decoration:none;border-radius:8px}
+.stats{display:flex;justify-content:center;gap:40px;padding:40px;flex-wrap:wrap}
+.cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;padding:40px 8%}
+.card{background:#1f2937;padding:20px;border-radius:12px}
+.badge{background:#10b981;padding:4px 10px;border-radius:999px;font-size:12px}
+form{display:grid;gap:12px;padding:40px 8%}
+input,select,textarea{padding:12px;border-radius:8px;border:none}
+footer{text-align:center;padding:30px;background:#111827}
+</style>
 </head>
 <body>
-
 <header>
-<div class="logo">
-<img src="images/logo.png" alt="Nexora Logo">
-<span>NEXORA TECHNOLOGIES</span>
-</div>
+<div class="logo">NEXORA</div>
 <nav>
-<a href="index.html">Home</a>
-<a href="#developers">Developers</a>
-<a href="#project">Projects</a>
-<a href="#join">Join</a>
+<a class="btn" href="index.html">Home</a>
+<a class="btn" href="#developers">Developers</a>
+<a class="btn" href="#project">Start a Project</a>
 </nav>
 </header>
 
 <section class="hero">
-<h1>Nexora Talent Hub</h1>
-<p>Connecting businesses with Africa's finest software engineers, AI specialists, cybersecurity experts and cloud professionals.</p>
-<a href="#project" class="btn btn-primary">Start a Project</a>
-<a href="#developers" class="btn btn-secondary">Explore Talent</a>
+<h1>Hire Verified African Tech Talent</h1>
+<p>Find developers, designers, AI engineers, cybersecurity specialists and cloud experts for your next project.</p>
+<a class="btn" href="#project">Start a Project</a>
+<a class="btn" href="#developers">Browse Talent</a>
 </section>
 
-<section class="section">
-<div class="stats">
-<div><h2>850+</h2><p>Developers</p></div>
-<div><h2>200+</h2><p>Companies</p></div>
-<div><h2>2400+</h2><p>Projects</p></div>
-<div><h2>98%</h2><p>Satisfaction</p></div>
+<section class="stats">
+<div><h2>500+</h2><p>Developers</p></div>
+<div><h2>150+</h2><p>Projects</p></div>
+<div><h2>98%</h2><p>Client Satisfaction</p></div>
+</section>
+
+<section id="developers">
+<h2 style="text-align:center">Featured Developers</h2>
+<div class="cardgrid">
+<div class="card"><span class="badge">Verified</span><h3>Frontend Engineer</h3><p>React • Vue • Next.js</p><button class="btn">Hire</button></div>
+<div class="card"><span class="badge">Verified</span><h3>Android Developer</h3><p>Kotlin • Java • Firebase</p><button class="btn">Hire</button></div>
+<div class="card"><span class="badge">Available</span><h3>Cybersecurity Expert</h3><p>PenTesting • SOC • DFIR</p><button class="btn">Hire</button></div>
+<div class="card"><span class="badge">Verified</span><h3>AI Engineer</h3><p>Python • LLMs • TensorFlow</p><button class="btn">Hire</button></div>
 </div>
 </section>
 
-<section class="section" id="developers">
-<h2 style="margin-bottom:30px">Featured Developers</h2>
-<div class="grid">
-<div class="card"><span class="badge">Verified</span><h3>Full Stack Developer</h3><p>React • Node.js • Firebase • Python</p><br><button>Hire Developer</button></div>
-<div class="card"><span class="badge">Verified</span><h3>Android Engineer</h3><p>Kotlin • Java • Jetpack Compose</p><br><button>Hire Developer</button></div>
-<div class="card"><span class="badge">Available</span><h3>Cybersecurity Analyst</h3><p>PenTesting • SOC • DFIR</p><br><button>Hire Developer</button></div>
-</div>
-</section>
-
-<section class="section" id="project">
-<h2 style="text-align:center;margin-bottom:25px">Launch Your Project</h2>
-<form>
-<input placeholder="Full Name">
-<input type="email" placeholder="Email">
+<section id="project">
+<h2 style="text-align:center">Start Your Project</h2>
+<form id="projectForm">
+<input placeholder="Full Name" required>
+<input type="email" placeholder="Email Address" required>
 <input placeholder="Company">
-<select><option>Website</option><option>Android App</option><option>AI</option><option>Cybersecurity</option></select>
+<select>
+<option>Web Development</option>
+<option>Mobile App</option>
+<option>AI Solution</option>
+<option>Cybersecurity</option>
+</select>
 <textarea rows="6" placeholder="Describe your project"></textarea>
-<button class="btn btn-primary" type="submit">Submit Project</button>
-</form>
-</section>
-
-<section class="section" id="join">
-<h2 style="text-align:center;margin-bottom:20px">Become a Nexora Developer</h2>
-<form>
-<input placeholder="Full Name">
-<input type="email" placeholder="Email">
-<input placeholder="Primary Skill">
-<input placeholder="GitHub / Portfolio">
-<button class="btn btn-primary">Apply Now</button>
+<button class="btn" type="submit">Submit Project</button>
 </form>
 </section>
 
 <footer>
-© 2026 Nexora Technologies • Building Africa's Future Through Technology
-  info@nexora.co.ke
+<p>© 2026 Nexora Technologies. Talent Marketplace.</p>
 </footer>
 
+<script type="module">
+document.getElementById("projectForm").addEventListener("submit",(e)=>{
+e.preventDefault();
+alert("Next step: connect this form to Firestore and EmailJS.");
+});
+</script>
 </body>
 </html>
+
